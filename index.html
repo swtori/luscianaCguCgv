@@ -3,116 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build Team - Terms & Conditions</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <title>Build Team - CGU/CGV</title>
     <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
+            --background: #f9f9f9;
         }
-        
+
         body {
-            font-family: 'Segoe UI', system-ui;
+            font-family: 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: var(--primary-color);
+            margin: 0;
+            padding: 20px;
+            background: var(--background);
+            color: #333;
         }
-        
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         .lang-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
         }
-        
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #ddd;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
         .content-section {
             max-width: 800px;
-            margin: 60px auto;
-            padding: 20px;
-        }
-        
-        h1, h2 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .md-content {
-            background: #f8f9fa;
-            border-radius: 10px;
+            margin: 0 auto 30px;
+            background: white;
             padding: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
+        h1, h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        strong {
+            color: var(--secondary-color);
+        }
+
         @media (max-width: 768px) {
-            .content-section {
-                margin: 20px auto;
+            body {
                 padding: 10px;
             }
-            
-            .lang-switcher {
-                top: 10px;
-                right: 10px;
+
+            .content-section {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <select class="form-select" onchange="switchLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-        </select>
+    <div class="header">
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="switchLanguage('fr')">FR</button>
+        </div>
+        <h1 id="main-title">Build Team - Terms & Conditions</h1>
     </div>
 
-    <div class="container">
-        <!-- English Content -->
-        <div id="en-content">
-            <div class="content-section">
-                <div class="md-content" id="en-tos"></div>
-            </div>
-            <div class="content-section">
-                <div class="md-content" id="en-tos2"></div>
-            </div>
+    <div class="content-container">
+        <!-- CGU Section -->
+        <div class="content-section en">
+            <h2>General Terms of Use</h2>
+            <p><strong>1. Purpose of the Terms</strong><br>
+            These Terms govern the use of the Minecraft Build Team's portfolio website. By using the site, users fully accept these conditions.</p>
+
+            <p><strong>2. Access to the website</strong><br>
+            The site is accessible 24/7 except during maintenance. The team is not responsible for technical issues or temporary unavailability.</p>
+
+            <p>📌 <em>These terms apply to all website users, clients or casual visitors.</em></p>
         </div>
 
-        <!-- French Content -->
-        <div id="fr-content" class="hidden">
-            <div class="content-section">
-                <div class="md-content" id="fr-cgu"></div>
-            </div>
-            <div class="content-section">
-                <div class="md-content" id="fr-cgv"></div>
-            </div>
+        <div class="content-section fr" style="display:none">
+            <h2>Conditions Générales d'Utilisation</h2>
+            <p><strong>1. Objet des CGU</strong><br>
+            Les présentes CGU encadrent l'utilisation du site vitrine / portfolio de la team de build Minecraft. En naviguant sur le site, l'utilisateur accepte sans réserve les présentes conditions.</p>
+
+            <p><strong>2. Accès au site</strong><br>
+            Le site est accessible 24h/24, 7j/7, sauf interruption pour maintenance. L'équipe décline toute responsabilité en cas de bug ou d'indisponibilité temporaire.</p>
+
+            <p>📌 <em>Ces CGU s'appliquent à tous les utilisateurs du site, clients ou simples visiteurs.</em></p>
+        </div>
+
+        <!-- CGV Section -->
+        <div class="content-section en">
+            <h2>General Sales Conditions</h2>
+            <p><strong>1. Contract purpose</strong><br>
+            These Terms govern the virtual construction services provided in Minecraft, including (but not limited to): spawns, hubs, custom maps.</p>
+
+            <p><strong>2. Orders & quotes</strong><br>
+            All project requests receive a free quote. Orders are confirmed after written acceptance of the quote and potential down payment. Deadlines are estimates.</p>
+
+            <p>📌 <em>These terms apply to all clients, individuals or Minecraft servers.</em></p>
+        </div>
+
+        <div class="content-section fr" style="display:none">
+            <h2>Conditions Générales de Vente</h2>
+            <p><strong>1. Objet du contrat</strong><br>
+            Les présentes CGV régissent les prestations de construction virtuelles proposées sur Minecraft, incluant notamment : spawns, hubs, maps sur mesure.</p>
+
+            <p><strong>2. Commande et devis</strong><br>
+            Toute demande donne lieu à un devis gratuit. Commande validée après acceptation écrite du devis et acompte éventuel. Délais indicatifs.</p>
+
+            <p>📌 <em>Ces CGV s'appliquent à tout client, particulier ou serveur Minecraft.</em></p>
         </div>
     </div>
 
-<script>
-// Language Management
-function switchLanguage(lang) {
-    document.getElementById('en-content').classList.toggle('hidden', lang !== 'en');
-    document.getElementById('fr-content').classList.toggle('hidden', lang !== 'fr');
-}
+    <script>
+        function switchLanguage(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('onclick').includes(lang)) btn.classList.add('active');
+            });
 
-// Markdown Content
-const terms = {
-    en: {
-        tos: `**Terms of Use - Minecraft Build Team**\n\n1. **Purpose**\nThese Terms govern the use of the portfolio website. By accessing the site, users fully accept these conditions.\n\n2. **Access**\nThe site is available 24/7 except during maintenance. We're not responsible for temporary unavailability or user-side issues.\n\n3. **Intellectual Property**\nAll content (builds, images, logos) is our exclusive property. Unauthorized use is prohibited.\n\n4. **Content Use**\nUsers agree not to copy, distribute, or exploit content without written permission.\n\n[... Other translated clauses ...]`,
-        tos2: `**Sales Terms - Minecraft Build Team**\n\n1. **Scope**\nThese Terms apply to virtual construction services including custom spawns, hubs, and maps.\n\n2. **Orders**\nProjects begin after written quote acceptance and potential deposit. Deadlines are estimates.\n\n[... Other translated clauses ...]`
-    },
-    fr: {
-        cgu: `__**Conditions Générales d’Utilisation – Team de Build Minecraft**__\n\n**1. Objet des CGU**\nLes présentes CGU encadrent l’utilisation du site vitrine / portfolio [...]\n\n[... Vos CGU complètes ...]`,
-        cgv: `__**Conditions Générales de Vente – Team de Build Minecraft**__\n\n**1. Objet du contrat**\nLes présentes CGV régissent les prestations de construction virtuelles [...]\n\n[... Vos CGV complètes ...]`
-    }
-};
+            // Update content visibility
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.style.display = el.classList.contains(lang) ? 'block' : 'none';
+            });
 
-// Render Markdown
-document.getElementById('en-tos').innerHTML = marked.parse(terms.en.tos);
-document.getElementById('en-tos2').innerHTML = marked.parse(terms.en.tos2);
-document.getElementById('fr-cgu').innerHTML = marked.parse(terms.fr.cgu);
-document.getElementById('fr-cgv').innerHTML = marked.parse(terms.fr.cgv);
-
-// Initial setup
-switchLanguage('en');
-</script>
+            // Update main title
+            document.getElementById('main-title').textContent = lang === 'fr' 
+                ? 'Build Team - CGU/CGV' 
+                : 'Build Team - Terms & Conditions';
+        }
+    </script>
 </body>
 </html>
